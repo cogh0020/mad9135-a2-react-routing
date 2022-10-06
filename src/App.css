@@ -13,6 +13,18 @@
   }
 }
 
+.home-card-list {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: .5rem;
+}
+
+.home-card {
+  border: .15rem solid black;
+  padding: .5rem;
+}
+
 .App-header {
   background-color: #282c34;
   min-height: 10vh;

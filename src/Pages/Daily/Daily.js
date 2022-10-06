@@ -2,9 +2,7 @@ import React from 'react'
 
 function Daily(){
 
-  return(
-  <>
-  </>
+  return(<h1>Daily</h1>
   )
 }
 

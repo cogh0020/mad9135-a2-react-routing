@@ -13,6 +13,10 @@
   }
 }
 
+.current-weather {
+  background-color:dodgerblue;
+}
+
 .home-card-list {
   display: flex;
   flex-direction: row;
@@ -23,6 +27,7 @@
 .home-card {
   border: .15rem solid black;
   padding: .5rem;
+  background-color: skyblue;
 }
 
 .App-header {

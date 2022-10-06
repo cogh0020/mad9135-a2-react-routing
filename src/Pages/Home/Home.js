@@ -7,6 +7,12 @@ function Home(){
   return (
   <>
     <h1>Home</h1>
+    <p> App instructions go here!</p>
+
+    <div className="current-weather">
+      
+    </div>
+
     <div className="home-card-list">
       <div className="home-card">
         <img src="" alt="Image For Hourly Weather"></img>

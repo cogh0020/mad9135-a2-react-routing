@@ -1,7 +1,10 @@
 import {Route, Routes, useRoutes, Navigate} from 'react-router'
+import {useState, useEffect} from 'react'
 
 import { getForecast, createWeatherIcon } from './weather.service'
 import { getGeolocation } from './map.service'
+
+import TestData from './testData.json'
 
 import Home from './Pages/Home/Home'
 import Hourly from './Pages/Hourly/Hourly'
@@ -15,9 +18,17 @@ import NotFound from './Pages/NotFound/NotFound'
 
 function App() {
 
+  const [respData, setRespData] = useState([])
+  
+  const fakeHourlyData = TestData
+
+
   async function doFetch(searchValue){
     try {
-      //Make fetch call, store data in variable 
+      let data = getForecast()
+      console.log(data)
+      
+
     } catch (err) {
       console.log('Error fetching:', err)
     }
@@ -31,9 +42,9 @@ function App() {
       <Header/>
       <NavBar/>
       <Routes>
-        <Route path="/" element={<Home/>}/>
-        <Route path="/hourly" element={<Hourly/>}/>
-        <Route path="/daily" element={<Daily/>}/>
+        <Route path="/" element={<Home weatherData={fakeHourlyData} />}/>
+        <Route path="/hourly" element={<Hourly weatherData={fakeHourlyData}/>}/>
+        <Route path="/daily" element={<Daily weatherData={fakeHourlyData}/>}/>
         <Route path="*" element={<NotFound/>}/>
       </Routes>
     </div>

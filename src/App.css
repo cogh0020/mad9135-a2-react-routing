@@ -1,3 +1,7 @@
+li {
+  list-style-type: none;
+}
+
 .App {
   text-align: center;
 }
@@ -28,6 +32,18 @@
   border: .15rem solid black;
   padding: .5rem;
   background-color: skyblue;
+}
+
+.weather-card {
+  border: .15rem solid black;
+  padding: .5rem;
+  background-color: skyblue;
+}
+
+.weather-card-list {
+  display: flex;
+  flex-direction: row;
+  gap: .5rem;
 }
 
 .App-header {

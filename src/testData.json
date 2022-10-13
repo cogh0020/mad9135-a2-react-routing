@@ -1,9 +1,9 @@
 {
-  "message": "Count: 24",
+  "message": "Count: 6",
   "cod": "200",
   "city_id": 2885679,
   "calctime": 0.004101027,
-  "cnt": 24,
+  "cnt": 6,
   "list": [
     {
       "dt": 1665003600,
@@ -121,27 +121,6 @@
         "temp_max": 284.92
       },
       "wind": { "speed": 0.89, "deg": 45, "gust": 1.79 },
-      "clouds": { "all": 0 },
-      "weather": [
-        {
-          "id": 800,
-          "main": "Clear",
-          "description": "clear sky",
-          "icon": "01n"
-        }
-      ]
-    },
-    {
-      "dt": 1665025200,
-      "main": {
-        "temp": 282.34,
-        "feels_like": 282.34,
-        "pressure": 1028,
-        "humidity": 96,
-        "temp_min": 280.2,
-        "temp_max": 285.11
-      },
-      "wind": { "speed": 0.45, "deg": 0, "gust": 1.79 },
       "clouds": { "all": 0 },
       "weather": [
         {

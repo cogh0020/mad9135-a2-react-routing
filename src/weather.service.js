@@ -37,7 +37,7 @@ export async function getForecast(options) {
     const forecast = await fetchForecast({
         units,
         coord
-    });
+    })
     cache.set(coord, forecast);
     return forecast;
 

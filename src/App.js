@@ -18,24 +18,18 @@ import NotFound from './Pages/NotFound/NotFound'
 
 function App() {
 
+
   const [respData, setRespData] = useState([])
   
   const fakeHourlyData = TestData
 
-
-  async function doFetch(searchValue){
+  async function getLocation(location){
     try {
-      let data = getForecast()
-      console.log(data)
-      
-
+      getGeolocation("Ottawa")
     } catch (err) {
       console.log('Error fetching:', err)
     }
   }
-
-  
-
 
   return (
     <div className="App">

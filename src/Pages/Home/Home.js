@@ -1,7 +1,7 @@
 import React from 'react'
 import {useNavigate} from 'react-router-dom'
 
-function Home(weatherData){
+function Home(){
   const navigate = useNavigate()
 
   return (
@@ -15,13 +15,13 @@ function Home(weatherData){
 
     <div className="home-card-list">
       <div className="home-card">
-        <img src="" alt="Image For Hourly Weather"></img>
+        <img src="" alt="#"></img>
         <p>Hourly</p>
         <button onClick={()=>{navigate('/hourly')}}>View Hourly Weather </button>
       </div>
 
       <div className="home-card">
-        <img src="" alt="Image For Daily Weather"></img>
+        <img src="" alt="#"></img>
         <p>Daily</p>
         <button onClick={()=>{navigate('/hourly')}}>View Daily Weather </button>
       </div>

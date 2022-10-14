@@ -1,22 +1,44 @@
-import React from 'react'
+import React, {useEffect, useState} from 'react'
+import { createWeatherIcon, getForecast } from '../../weather.service'
 
-function Daily({weatherData}){
+function Daily(coords){
 
-  const myDailyWeather = weatherData.list
-  console.log(myDailyWeather)
+const [dailyData, setDailyData] = useState()
 
-  return (
+  useEffect(()=>{
+    callFetch()
+  }, [])
+
+  async function callFetch (){
+    const fetchData = await getForecast(coords)
+    .then(data => {
+      let fixedArray = data.daily.slice(0,6)
+      setDailyData(fixedArray)
+      console.log(fixedArray)
+    })
+    .catch(err => console.log(err))
+  }
+
+  if (!dailyData) {
+    return<>
+    <p>There is no daily data</p>
+    </>
+  }
+  else {
+    return (
     <ul className="weather-card-list">
-      {myDailyWeather.map((day)=>(
-        <li className=" weather-card" key={day.dt}>
-          <p>Temperature: {day.main.temp}</p>
-          <p>Feels Like: {day.main.feels_like}</p>
-          <p>Humidity: {day.main.humidity}</p>
-          <p>Humidity: {day.weather.description}</p>
+      {dailyData.map((day)=>(
+        <li className="weather-card" key={day.dt}>
+          <p>Day</p>
+          <img src={createWeatherIcon(day.weather[0].icon)} alt="IMG"></img>
+          <p>{day.weather[0].main}</p>
+          <p>High: {day.temp.max}</p>
+          <p>Low: {day.temp.min}</p>
         </li>
       ))}
     </ul>
-  )
+    )
+  }
 }
 
 export default Daily

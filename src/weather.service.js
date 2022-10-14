@@ -82,5 +82,5 @@ export function createWeatherIcon(iconCode) {
         'https://openweathermap.org/img/w/' + iconCode + '.png'
     );
     img.setAttribute('alt', '');
-    return img;
+    return img.src;
 }

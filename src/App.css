@@ -2,6 +2,10 @@ li {
   list-style-type: none;
 }
 
+ul {
+
+}
+
 .App {
   text-align: center;
 }
@@ -38,11 +42,19 @@ li {
   border: .15rem solid black;
   padding: .5rem;
   background-color: skyblue;
+  box-shadow: 0 3px 5px #0005;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.weather-card:hover {
+  box-shadow: 0 5px 10px #0005;
+  transform: scale(1.05);
 }
 
 .weather-card-list {
   display: flex;
   flex-direction: row;
+  justify-content: center;
   gap: .5rem;
 }
 

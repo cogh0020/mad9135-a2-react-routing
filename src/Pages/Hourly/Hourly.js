@@ -1,18 +1,16 @@
 import React, { useEffect, useState } from 'react'
-import { getForecast } from '../../weather.service'
+import { getForecast, createWeatherIcon } from '../../weather.service'
 
-function Hourly(){
+function Hourly({coords}){
   const [hourlyData, setHourlyData] = useState()
 
   useEffect(()=>{
     callFetch()
   }, [])
 
-  async function callFetch (params){
-    const fetchData = await getForecast(params)
+  async function callFetch (){
+    const fetchData = await getForecast(coords)
     .then(data => {
-      //console.log(data)
-      //console.log(fetchData)
       let fixedArray = data.hourly.slice(0,6)
       setHourlyData(fixedArray)
       console.log(fixedArray)
@@ -26,16 +24,16 @@ function Hourly(){
     </>
   }
   else {
-    console.log(hourlyData)
     return (
     <ul className="weather-card-list">
       {hourlyData.map((hour)=>(
         <li className="weather-card" key={hour.dt}>
-          <img srs="" alt="IMG"></img>
+          <p>00:00</p>
+          <img alt="Icon" src={createWeatherIcon(hour.weather[0].icon)}></img>
+          <p>{hour.weather[0].main}</p>
           <p>Temperature: {hour.temp}</p>
           <p>Feels Like: {hour.feels_like}</p>
           <p>Humidity: {hour.humidity}</p>
-          {/* <p>Humidity: {hour.weather.description}</p> */}
         </li>
       ))}
     </ul>

@@ -7,7 +7,6 @@ import Hourly from './Pages/Hourly/Hourly'
 import Daily from './Pages/Daily/Daily'
 
 import Header from './Components/Header/Header'
-import NavBar from './Components/NavBar/NavBar'
 
 import './App.css';
 import NotFound from './Pages/NotFound/NotFound'
@@ -27,7 +26,6 @@ function App() {
     if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(outputLocation)
     } else {
-      
       console.log("Could not find location")
     }
   }
@@ -60,6 +58,11 @@ function App() {
         <Route path="/daily" element={<Daily coords={options}/>}/>
         <Route path="*" element={<NotFound/>}/>
       </Routes>
+      <div className="previous-searches">
+        <button>A previous search</button>
+        <button>A previous search</button>
+        <button>A previous search</button>
+      </div>
     </div>
   );
 }

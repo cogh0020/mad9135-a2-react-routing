@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import LoadOverlay from '../../Components/LoadOverlay/LoadOverlay'
 import { getForecast, createWeatherIcon } from '../../weather.service'
 
 function Hourly({coords}){
@@ -22,6 +23,7 @@ function Hourly({coords}){
   if (!hourlyData) {
     return<>
     <p>There is no hourly data</p>
+    <LoadOverlay/>
     </>
   }
   else {

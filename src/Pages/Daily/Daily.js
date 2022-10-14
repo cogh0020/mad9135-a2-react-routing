@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from 'react'
 import { createWeatherIcon, getForecast } from '../../weather.service'
+import LoadOverlay from '../../Components/LoadOverlay/LoadOverlay'
 
 function Daily(coords){
 
@@ -23,6 +24,7 @@ const [dailyData, setDailyData] = useState()
   if (!dailyData) {
     return<>
     <p>There is no daily data</p>
+    <LoadOverlay/>
     </>
   }
   else {

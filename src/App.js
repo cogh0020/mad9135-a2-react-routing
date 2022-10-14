@@ -5,7 +5,6 @@ import { getGeolocation } from './map.service'
 import Home from './Pages/Home/Home'
 import Hourly from './Pages/Hourly/Hourly'
 import Daily from './Pages/Daily/Daily'
-
 import Header from './Components/Header/Header'
 
 import './App.css';
@@ -14,12 +13,16 @@ import NotFound from './Pages/NotFound/NotFound'
 function App() {
 
   const [coords, setCoords] = useState({})
+  const [searchValue, setSearchValue] = useState()
+
   let options = { coords, units:"metric"}
 
   useEffect(()=>{
-    callFetch()
+    if (searchValue){
+      callFetch(searchValue)
+    }
     geoFunc()
-  }, [])
+  }, [searchValue])
 
 
   function geoFunc(){
@@ -40,8 +43,14 @@ function App() {
     setCoords(coordObject)
   }
 
-  async function callFetch(){
-    const fetchData = await getGeolocation("Ottawa")
+  function handleSubmit(ev){
+    ev.preventDefault()
+    console.log("Form submitted")
+    setSearchValue(ev.target[0].value)
+  }
+
+  async function callFetch(location){
+    const fetchData = await getGeolocation(location)
     .then(data => {
       setCoords(data)
       console.log(data)
@@ -52,6 +61,12 @@ function App() {
   return (
     <div className="App">
       <Header/>
+      <div className="search">
+          <form className="inputForm" onSubmit={handleSubmit}>
+            <input type="text" placeholder="Location"></input>
+            <button type="submit">Search</button>
+          </form>
+        </div>
       <Routes>
         <Route path="/" element={<Home/>}/>
         <Route path="/hourly" element={<Hourly coords={options} />}/>

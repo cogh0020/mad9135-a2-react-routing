@@ -54,7 +54,6 @@ function App() {
   return (
     <div className="App">
       <Header/>
-      <NavBar/>
       <Routes>
         <Route path="/" element={<Home/>}/>
         <Route path="/hourly" element={<Hourly coords={options} />}/>

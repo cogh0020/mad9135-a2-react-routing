@@ -7,7 +7,9 @@ function Home(){
   return (
   <>
     <h1>Home</h1>
-    <p> App instructions go here!</p>
+    <p>Welcome!</p>
+    <p>To view the weather, enable GeoLocation through your browser</p>
+    <p>Alternatively, search the weather by location in the top right</p>
 
     <div className="current-weather">
       Current Weather Here

@@ -1,13 +1,16 @@
-//import logo from './logo.svg';
-import logo from '../../logo.svg'
 import React from 'react'
+import NavBar from '../NavBar/NavBar'
 
 function Header(){
 
   return(
     <header className="App-header">
-        React Routing - Weather App
-        <img src={logo} className="App-logo" alt="logo" />
+        <h2 className="app-title">Weather App</h2>
+        <NavBar/>
+        <div className="search">
+          <input placeholder="Location"></input>
+          <button>Search</button>
+        </div>
     </header>
   )
 }

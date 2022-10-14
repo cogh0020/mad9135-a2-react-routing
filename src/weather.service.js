@@ -26,6 +26,7 @@ const cache = new Map();
  * @see https://openweathermap.org/api/one-call-api#data
  */
 export async function getForecast(options) {
+  console.log(options)
     const {
         coord,
         units
@@ -64,6 +65,8 @@ async function fetchForecast({
     },
     units
 }) {
+    console.log(lat)
+    console.log(lon)
     const url = `${BASE_URL}?lat=${lat}&lon=${lon}&units=${units}&appid=${API_KEY}`;
     console.log(url)
     const response = await fetch(url);

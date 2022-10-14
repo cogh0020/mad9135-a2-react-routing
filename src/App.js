@@ -12,10 +12,10 @@ import NotFound from './Pages/NotFound/NotFound'
 
 function App() {
 
-  const [coords, setCoords] = useState({})
+  const [coord, setCoord] = useState({})
   const [searchValue, setSearchValue] = useState()
 
-  let options = { coords, units:"metric"}
+  let options = { coord, units:"metric"}
 
   useEffect(()=>{
     if (searchValue){
@@ -40,7 +40,7 @@ function App() {
       lat: position.coords.latitude
     }
     console.log(position)
-    setCoords(coordObject)
+    setCoord(coordObject)
   }
 
   function handleSubmit(ev){
@@ -52,7 +52,7 @@ function App() {
   async function callFetch(location){
     const fetchData = await getGeolocation(location)
     .then(data => {
-      setCoords(data)
+      setCoord(data)
       console.log(data)
     })
     .catch(err => console.log(err))

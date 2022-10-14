@@ -10,7 +10,7 @@ function Home(){
     <p> App instructions go here!</p>
 
     <div className="current-weather">
-      
+      Current Weather Here
     </div>
 
     <div className="home-card-list">

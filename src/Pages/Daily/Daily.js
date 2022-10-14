@@ -10,6 +10,7 @@ const [dailyData, setDailyData] = useState()
   }, [])
 
   async function callFetch (){
+    console.log(coords)
     const fetchData = await getForecast(coords)
     .then(data => {
       let fixedArray = data.daily.slice(0,6)

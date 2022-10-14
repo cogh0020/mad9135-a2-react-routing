@@ -9,6 +9,7 @@ function Hourly({coords}){
   }, [])
 
   async function callFetch (){
+    console.log(coords)
     const fetchData = await getForecast(coords)
     .then(data => {
       let fixedArray = data.hourly.slice(0,6)

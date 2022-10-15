@@ -32,7 +32,7 @@ const [dailyData, setDailyData] = useState()
     <ul className="weather-card-list">
       {dailyData.map((day)=>(
         <li className="weather-card" key={day.dt}>
-          <p>Day</p>
+          <p>{new Date(day.dt*1000).toLocaleDateString()}</p>
           <img src={createWeatherIcon(day.weather[0].icon)} alt="IMG"></img>
           <p>{day.weather[0].main}</p>
           <p>High: {day.temp.max}</p>

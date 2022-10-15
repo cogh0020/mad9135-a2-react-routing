@@ -74,9 +74,6 @@ function App() {
         <Route path="*" element={<NotFound/>}/>
       </Routes>
       <div className="previous-searches">
-        <button>A previous search</button>
-        <button>A previous search</button>
-        <button>A previous search</button>
       </div>
     </div>
   );

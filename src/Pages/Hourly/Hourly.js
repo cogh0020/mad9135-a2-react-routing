@@ -31,7 +31,7 @@ function Hourly({coords}){
     <ul className="weather-card-list">
       {hourlyData.map((hour)=>(
         <li className="weather-card" key={hour.dt}>
-          <p>00:00</p>
+          <p>{new Date(hour.dt * 1000).toLocaleTimeString()}</p>
           <img alt="Icon" src={createWeatherIcon(hour.weather[0].icon)}></img>
           <p>{hour.weather[0].main}</p>
           <p>Temperature: {hour.temp}</p>
@@ -43,5 +43,6 @@ function Hourly({coords}){
     )
   }
 }
+//dt=new Date(1234567890 * 1000).toLocaleString();
 
 export default Hourly

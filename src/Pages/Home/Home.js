@@ -9,10 +9,9 @@ function Home(){
     <h1>Home</h1>
     <p>Welcome!</p>
     <p>To view the weather, enable GeoLocation through your browser</p>
-    <p>Alternatively, search the weather by location in the top right</p>
+    <p>Alternatively, search the weather by location above</p>
 
     <div className="current-weather">
-      Current Weather Here
     </div>
 
     <div className="home-card-list">

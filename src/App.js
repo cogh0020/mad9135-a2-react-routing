@@ -68,7 +68,7 @@ function App() {
           </form>
         </div>
       <Routes>
-        <Route path="/" element={<Home/>}/>
+        <Route path="/" element={<Home location={searchValue}/>}/>
         <Route path="/hourly" element={<Hourly coords={options} />}/>
         <Route path="/daily" element={<Daily coords={options}/>}/>
         <Route path="*" element={<NotFound/>}/>

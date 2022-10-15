@@ -1,7 +1,7 @@
 import React from 'react'
 import {useNavigate} from 'react-router-dom'
 
-function Home(){
+function Home(location){
   const navigate = useNavigate()
 
   return (
@@ -16,15 +16,13 @@ function Home(){
 
     <div className="home-card-list">
       <div className="home-card">
-        <img src="" alt="#"></img>
-        <p>Hourly</p>
+        <p>Hourly Weather</p>
         <button onClick={()=>{navigate('/hourly')}}>View Hourly Weather </button>
       </div>
 
       <div className="home-card">
-        <img src="" alt="#"></img>
-        <p>Daily</p>
-        <button onClick={()=>{navigate('/hourly')}}>View Daily Weather </button>
+        <p>Daily Weather</p>
+        <button onClick={()=>{navigate('/daily')}}>View Daily Weather </button>
       </div>
     </div>
   </>
